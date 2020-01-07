@@ -49,15 +49,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
      { path: 'Booking-Successful' , component:BookingsSuccessfulComponent}, 
      { path: 'My-consultations' , component: MyConsultationsComponent},
      { path: 'admin/consultations' , component: AdminConsultationComponent},
-     { path: 'admin/bookings' , component: AdminBookingComponent}, //check here for errors
-     { path: 'payments' , component: PaymentsComponent},// check here for errors
+     { path: 'admin/bookings' , component: AdminBookingComponent},
+     { path: 'payments' , component: PaymentsComponent},
      { path: 'login' , component: LoginComponent}, 
-
-
-
-
-
-
 
     ])
   ],
