@@ -20,6 +20,8 @@ import { AdminBookingComponent } from './admin/admin-booking/admin-booking.compo
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from './auth.service';
+import { AuthGaurdService } from './auth-gaurd.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RouterModule.forRoot([
      { path: '' , component: HomeComponent},
      { path: 'consultations' , component: ConsultationsComponent},
-     { path: 'bookings' , component: BookingsComponent},
+     { path: 'bookings' , component: BookingsComponent, canActivate: [AuthGaurdService]},
      { path: 'Booking-Successful' , component:BookingsSuccessfulComponent}, 
      { path: 'My-consultations' , component: MyConsultationsComponent},
      { path: 'admin/consultations' , component: AdminConsultationComponent},
@@ -55,7 +57,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
     ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService],
+  bootstrap: [AppComponent, AuthGaurdService]
 })
 export class AppModule { }
