@@ -21,7 +21,9 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './auth.service';
-import { AuthGaurdService } from './auth-gaurd.service';
+import { AuthGuardService } from './auth-guard.service';
+import { UserService } from './user.service';
+
 
 @NgModule({
   declarations: [
@@ -43,21 +45,21 @@ import { AuthGaurdService } from './auth-gaurd.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    NgbModule,//check here for errors
+    NgbModule,//check here for errors 
     RouterModule.forRoot([
      { path: '' , component: HomeComponent},
-     { path: 'consultations' , component: ConsultationsComponent},
-     { path: 'bookings' , component: BookingsComponent, canActivate: [AuthGaurdService]},
-     { path: 'Booking-Successful' , component:BookingsSuccessfulComponent}, 
-     { path: 'My-consultations' , component: MyConsultationsComponent},
-     { path: 'admin/consultations' , component: AdminConsultationComponent},
-     { path: 'admin/bookings' , component: AdminBookingComponent},
-     { path: 'payments' , component: PaymentsComponent},
+     { path: 'consultations' , component: ConsultationsComponent ,canActivate: [AuthGuardService] },
+     { path: 'bookings' , component: BookingsComponent, canActivate: [AuthGuardService] },
+     { path: 'Booking-Successful' , component:BookingsSuccessfulComponent ,canActivate: [AuthGuardService] }, 
+     { path: 'My-consultations' , component: MyConsultationsComponent,canActivate: [AuthGuardService]  },
+     { path: 'admin/consultations' , component: AdminConsultationComponent,canActivate: [AuthGuardService] },
+     { path: 'admin/bookings' , component: AdminBookingComponent,canActivate: [AuthGuardService] },
+     { path: 'payments' , component: PaymentsComponent,canActivate: [AuthGuardService] },
      { path: 'login' , component: LoginComponent}, 
 
     ])
   ],
-  providers: [AuthService],
-  bootstrap: [AppComponent, AuthGaurdService]
+  providers: [AuthService, AuthGuardService, UserService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
