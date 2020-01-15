@@ -23,6 +23,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { UserService } from './user.service';
+import { BookingFormComponent } from './admin/booking-form/booking-form.component';
+// import { CategoryService } from './category.service';
+import { FormsModule } from '@angular/forms'
+import { DoctorsService } from './doctors.service';
+import { CreateAccountComponent } from './create-account/create-account.component';
+//import { AdminAuthGaurdService } from './admin-auth-gaurd.service';
 
 
 @NgModule({
@@ -37,10 +43,13 @@ import { UserService } from './user.service';
     MyConsultationsComponent,
     AdminConsultationComponent,
     AdminBookingComponent,
-    LoginComponent
+    LoginComponent,
+    BookingFormComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -49,17 +58,19 @@ import { UserService } from './user.service';
     RouterModule.forRoot([
      { path: '' , component: HomeComponent},
      { path: 'consultations' , component: ConsultationsComponent ,canActivate: [AuthGuardService] },
-     { path: 'bookings' , component: BookingsComponent, canActivate: [AuthGuardService] },
+     { path: 'bookings' , component: BookingsComponent,canActivate: [AuthGuardService]},
      { path: 'Booking-Successful' , component:BookingsSuccessfulComponent ,canActivate: [AuthGuardService] }, 
      { path: 'My-consultations' , component: MyConsultationsComponent,canActivate: [AuthGuardService]  },
      { path: 'admin/consultations' , component: AdminConsultationComponent,canActivate: [AuthGuardService] },
-     { path: 'admin/bookings' , component: AdminBookingComponent,canActivate: [AuthGuardService] },
+     { path: 'admin/bookings' , component: AdminBookingComponent,canActivate: [AuthGuardService]},
+     { path: 'admin/bookings/new' , component: BookingFormComponent,canActivate: [AuthGuardService] },
      { path: 'payments' , component: PaymentsComponent,canActivate: [AuthGuardService] },
-     { path: 'login' , component: LoginComponent}, 
+     { path: 'login' , component: LoginComponent},
+     { path: 'create-account', component: CreateAccountComponent} 
 
     ])
   ],
-  providers: [AuthService, AuthGuardService, UserService],
+  providers: [AuthService, AuthGuardService, UserService/*AdminAuthGaurdService*/, DoctorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

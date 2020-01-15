@@ -1,19 +1,22 @@
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
     <a class="navbar-brand" href="/">OnlineDoc</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+    
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"></li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/bookings">Bookings</a>
         </li>
+        <li class="nav-item">
+          <a class="dropdown-item" routerLink="/create-account">Create Account</a>
+        </li>
         <ng-template #anonymousUser>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login">login</a>
+            <a class="nav-link" routerLink="/login">login with Google</a>
           </li>  
         </ng-template>
         
@@ -23,9 +26,11 @@
             <a class="dropdown-item" routerLink="/consultations">My Consultations</a> 
             <a class="dropdown-item" routerLink="/admin/bookings">Manage Bookings</a>
             <a class="dropdown-item" routerLink="/admin/consultations">Check consultations</a>
+            
             <a class="dropdown-item" (click)= "logout()">Log Out</a>
 
           </div>
+        
         </li>
       </ul>
       <!--

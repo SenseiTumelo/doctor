@@ -1,0 +1,21 @@
+[
+ {
+     "id":1,
+     "Firstname":"Tumelo(local)",
+     "LastName":"Motjopi",
+     "Email":"tmotjopi@gmail.com"  
+ },
+ {
+    "id":2,
+    "Firstname":"Sensei(local)",
+    "LastName":"JongSu",
+    "Email":"sj@gmail.com"  
+ },
+ {
+    "id":3,
+    "Firstname":"Hertz(local)",
+    "LastName":"Akl",
+    "Email":"hertzakl@gmail.com"  
+ }
+
+]
