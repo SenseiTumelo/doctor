@@ -24,7 +24,7 @@ import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { UserService } from './user.service';
 import { BookingFormComponent } from './admin/booking-form/booking-form.component';
-// import { CategoryService } from './category.service';
+import { CustomFormsModule } from 'ng2-validation'
 import { FormsModule } from '@angular/forms'
 import { DoctorsService } from './doctors.service';
 import { CreateAccountComponent } from './create-account/create-account.component';
@@ -52,6 +52,7 @@ import { BookingService} from './booking.service'
   imports: [
     BrowserModule,
     FormsModule,
+    CustomFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
