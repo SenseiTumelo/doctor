@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorsService } from 'src/app/doctors.service';
+import { BookingService } from 'src/app/booking.service';
+
 //import { CategoryService } from 'src/app/category.service';
 
 //writenn as product in the videos
@@ -10,12 +12,18 @@ import { DoctorsService } from 'src/app/doctors.service';
 })
 export class BookingFormComponent implements OnInit {
  doctors$;
-  constructor(doctorService : DoctorsService) { 
+  constructor(
+    doctorService : DoctorsService, 
+    private bookingService : BookingService) { 
    this.doctors$ = doctorService.getDoctor;
     //this.categories$ = categoryService.getCategories;
   }
+
   save(booking){
-    console.log(booking);
+  
+    this.bookingService.create(booking);
+
+
   }
 
   ngOnInit() {

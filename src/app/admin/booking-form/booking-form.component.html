@@ -1,25 +1,24 @@
 <form #f="ngForm" (ngSubmit)="save(f.value)">
-
 <!--here is were i created the booking form
 copy the <div> and paste to create a new field -->
 <div class="form-group">
     <label for="title">Title</label>
-    <input [(ngModel)]="title" id= "title" type="text" class="form-control">
+    <input ngModel name="title" id= "title" type="text" class="form-control">
 </div> 
 
 <div class="form-group">
     <label for="price">Price</label>
     <div class="input-group">
         <span class="input-group-addon">R</span>
-        <input  [(ngModel)]="price" id= "price" type="number" class="form-control">
+        <input  ngModel name="price" id= "price" type="number" class="form-control">
     </div>
     
 </div>  
 
 <div class="form-group">
     <label for="Doctors">Doctor type</label>
-    <select ngModel="Doctors" id= "Doctors"  class="form-control">
-       <option value=""></option>
+    <select ngModel name="Doctors" id= "Doctors"  class="form-control">
+       <option value="">dentist</option>
           <option *ngFor="let c of doctors$ | async"   [value]="c.$key">
            {{ c.name }}  
            </option>
@@ -29,7 +28,7 @@ copy the <div> and paste to create a new field -->
 
 <div class="form-group">
     <label for="imageUrl">Image Url</label>
-    <input ngModel="imageUrl" id= "imageUrl" type="text" class="form-control">
+    <input ngModel name="imageUrl" id= "imageUrl" type="text" class="form-control">
 </div>
 <button class="btn btn-primary">Save</button>
 </form>
