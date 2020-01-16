@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-    <a class="navbar-brand" href="/home">OnlineDoc</a>
+    <a class="navbar-brand" routerLink="/home">OnlineDoc</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,10 +9,13 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"></li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/bookings">Bookings</a>
+          <a class="nav-link" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="dropdown-item" routerLink="/create-account">Create Account</a>
+          <a class="nav-link" routerLink="/admin/bookings">Bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-account">Create Account</a>
         </li>
         <ng-template #anonymousUser>
           <li class="nav-item">
