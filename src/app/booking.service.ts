@@ -11,4 +11,9 @@ export class BookingService {
   create(booking){
     return this.db.list('/bookings').push(booking);
   }
+
+  getAll(){
+    return this.db.list('/bookings');
+  }
+  
 }

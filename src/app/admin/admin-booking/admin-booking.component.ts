@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookingService } from 'src/app/booking.service';
 
 @Component({
   selector: 'app-admin-booking',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-booking.component.css']
 })
 export class AdminBookingComponent implements OnInit {
-
-  constructor() { }
+ booking$;
+  constructor(private bookingService: BookingService) { 
+    this.booking$= this.bookingService.getAll();
+  }
 
   ngOnInit() {
   }
