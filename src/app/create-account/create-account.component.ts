@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-create-account',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
-
-  constructor() { }
+   account$;
+  constructor(private accountService: AccountService) {
+    this.account$ = this.accountService.getAll();
+   }
 
   ngOnInit() {
   }

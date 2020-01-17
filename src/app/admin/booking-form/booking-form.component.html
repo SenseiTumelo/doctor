@@ -3,12 +3,17 @@
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
         <form #f="ngForm" (ngSubmit)="save(f.value)">
+
             <div class="form-group">
                 <label for="title">Title</label>
-                <input #title="ngModel" ngModel name="title" id= "title" type="text" class="form-control" required>
+                <select #title="ngModel" ngModel name="title" id= "title" type="text" class="form-control" required>
+                    <option value="">Mr</option>
+                    <option value="">MRS</option>
+                    
                 <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
                     title is required.
                 </div>
+                </select>
             </div> 
             
             <div class="form-group"> 
@@ -30,6 +35,9 @@
                 <select #doctors = "ngModel" ngModel name="doctors" id= "doctors"  class="form-control" required url>
                     
                    <option value="">dentist</option>
+                   <option value="">Optimestrist</option>
+                   <option value="">Psychologist</option>
+                   <option value="">Therapist</option>
                       <option *ngFor="let c of doctors$ | async"   [value]="c.$key">
                        {{ c.name }}  
                        </option>

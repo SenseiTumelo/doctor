@@ -29,6 +29,7 @@ import { FormsModule } from '@angular/forms'
 import { DoctorsService } from './doctors.service';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { BookingService} from './booking.service'
+import { AccountService } from './account.service';
 //import { PatientService } from './patient.service';
 //import { AdminAuthGaurdService } from './admin-auth-gaurd.service';
 
@@ -73,7 +74,7 @@ import { BookingService} from './booking.service'
 
     ])
   ],
-  providers: [AuthService, AuthGuardService, UserService/*AdminAuthGaurdService*/, DoctorsService,BookingService],
+  providers: [AuthService, AuthGuardService, UserService/*AdminAuthGaurdService*/, DoctorsService,BookingService,AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,22 +1,45 @@
-<p><a routerLink="/admin/bookings/new" class="btn btn-primary btn-rounded">Book for consultion</a>
+<p><a routerLink="/admin/bookings/new" class="btn btn-primary btn-rounded">Add bookings</a>
 </p>
 <!--<a routerLink="/admin/bookings/new" class="btn btn-primary">new booking</a>-->
 
-<table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <thead>
-        <tr *ngFor="let b of booking$ | async as list">
-        <td></td>
-        <td></td>
-        <td></td>
-        </tr>
-      </thead>
-
-  </table>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">email</th>
+      <th scope="col">consultation date&time</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Tumi Motjopi</td>
+      <td>tmotjopi@gmail.com</td>
+      <td>2020/01/13 09:00</td>
+      <td>
+        <a routerLink="/admin-bookings" >Edit</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Thabo Sodi</td>
+      <td>eldrigesodi12@gmail.com</td>
+      <td>2020/01/13 09:00</td>
+      <td>
+        <a routerLink="/admin-bookings" >Edit</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Godfrey Rabothata</td>
+      <td>naxfrieR@gmail.com</td>
+      <td>2020/01/13 09:00</td>
+      <td>
+        <a routerLink="/admin-bookings" >Edit</a>
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
